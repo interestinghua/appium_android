@@ -19,9 +19,9 @@ import json
 import os
 import random
 from time import sleep
-from dateutil.parser import parse
+# from dateutil.parser import parse
 
-from webdriver.applicationstate import ApplicationState
+# from webdriver.applicationstate import ApplicationState
 from selenium.common.exceptions import NoSuchElementException
 
 from appium import webdriver
@@ -33,7 +33,7 @@ SLEEPY_TIME = 1
 
 class AppiumTests(unittest.TestCase):
     def setUp(self):
-        desired_caps = desired_capabilities.get_desired_capabilities('ApiDemos-debug.apk')
+        desired_caps = desired_capabilities.get_desired_capabilities('AiJiHui_V4.29.0_[official].apk')
         self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 
     def tearDown(self):
@@ -49,16 +49,16 @@ class AppiumTests(unittest.TestCase):
         result = self.driver.stop_recording_screen()
         self.assertTrue(len(result) > 0)
 
-    def test_app_management(self):
-        app_id = self.driver.current_package
-        self.assertEqual(self.driver.query_app_state(app_id),
-                         ApplicationState.RUNNING_IN_FOREGROUND)
-        self.driver.background_app(-1)
-        self.assertTrue(self.driver.query_app_state(app_id) <
-                         ApplicationState.RUNNING_IN_FOREGROUND)
-        self.driver.activate_app(app_id)
-        self.assertEqual(self.driver.query_app_state(app_id),
-                         ApplicationState.RUNNING_IN_FOREGROUND)
+    # def test_app_management(self):
+    #     app_id = self.driver.current_package
+    #     self.assertEqual(self.driver.query_app_state(app_id),
+    #                      ApplicationState.RUNNING_IN_FOREGROUND)
+    #     self.driver.background_app(-1)
+    #     self.assertTrue(self.driver.query_app_state(app_id) <
+    #                      ApplicationState.RUNNING_IN_FOREGROUND)
+    #     self.driver.activate_app(app_id)
+    #     self.assertEqual(self.driver.query_app_state(app_id),
+    #                      ApplicationState.RUNNING_IN_FOREGROUND)
 
     def test_lock(self):
         self.driver.lock(-1)
@@ -260,10 +260,10 @@ class AppiumTests(unittest.TestCase):
         self.assertIsNotNone(loc['x'])
         self.assertIsNotNone(loc['y'])
 
-    def test_device_time(self):
-        date_time = self.driver.device_time
-        # convert to date ought to work
-        parse(date_time)
+    # def test_device_time(self):
+    #     date_time = self.driver.device_time
+    #     # convert to date ought to work
+    #     parse(date_time)
 
 
 if __name__ == "__main__":

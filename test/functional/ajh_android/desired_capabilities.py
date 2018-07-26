@@ -25,7 +25,7 @@ def PATH(p):
 def get_desired_capabilities(app):
     desired_caps = {
         'platformName': 'Android',
-        'deviceName': 'NDF0217A26000088',
+        'deviceName': 'emulator-5554',
         'platformVersion': '8.0',
         'app': PATH('../../apps/' + app),
         'newCommandTimeout': 240
