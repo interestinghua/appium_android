@@ -14,9 +14,7 @@
 
 import unittest
 from time import sleep
-
 from selenium.common.exceptions import NoSuchElementException
-
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 import desired_capabilities

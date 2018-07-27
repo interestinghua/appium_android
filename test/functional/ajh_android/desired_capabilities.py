@@ -11,6 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# public interface AutomationName {
+#     String APPIUM = "Appium";
+#     String SELENDROID = "Selendroid";
+#     String IOS_XCUI_TEST = "XCuiTest";
+#     String ANDROID_UIAUTOMATOR2 = "UIAutomator2";
+#     String YOUI_ENGINE = "youiengine";
+#     String ESPRESSO = "Espresso";
+# }
+# 'automationName': 'uiautomator2'
 
 import os
 

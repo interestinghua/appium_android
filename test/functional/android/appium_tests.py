@@ -33,7 +33,7 @@ SLEEPY_TIME = 1
 
 class AppiumTests(unittest.TestCase):
     def setUp(self):
-        desired_caps = desired_capabilities.get_desired_capabilities('AiJiHui_V4.29.0_[official].apk')
+        desired_caps = desired_capabilities.get_desired_capabilities('ApiDemos-debug.apk')
         self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 
     def tearDown(self):
