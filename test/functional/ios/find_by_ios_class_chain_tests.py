@@ -13,9 +13,9 @@
 # limitations under the License.
 
 import unittest
-
 from appium import webdriver
-import desired_capabilities
+from test.functional.ios import desired_capabilities
+
 
 class FindByIOClassChainTests(unittest.TestCase):
     @classmethod

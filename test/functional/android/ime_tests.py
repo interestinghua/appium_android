@@ -15,11 +15,8 @@
 
 import unittest
 from time import sleep
-
-from selenium.common.exceptions import NoSuchElementException
-
 from appium import webdriver
-import desired_capabilities
+from test.functional.android import desired_capabilities
 
 
 # the emulator is sometimes slow and needs time to think

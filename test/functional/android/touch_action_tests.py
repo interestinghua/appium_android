@@ -17,7 +17,7 @@ from time import sleep
 from selenium.common.exceptions import NoSuchElementException
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
-import desired_capabilities
+from test.functional.android import desired_capabilities
 
 # the emulator is sometimes slow
 SLEEPY_TIME = 2

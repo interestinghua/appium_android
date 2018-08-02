@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 
 import unittest
-from time import sleep
-
-
 from appium import webdriver
 
 

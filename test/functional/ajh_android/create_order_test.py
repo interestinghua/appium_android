@@ -1,12 +1,13 @@
 # -*- coding: UTF-8 -*-
 import unittest
 from appium import webdriver
-import desired_capabilities
 from appium.webdriver.common.touch_action import TouchAction
 from time import sleep
+from test.functional.ajh_android import desired_capabilities
 
 # the emulator is sometimes slow and needs time to think
 # unittest.TestCase
+
 SLEEPY_TIME = 2
 
 
@@ -24,21 +25,21 @@ class AndroidAJHTests(unittest.TestCase):
         self.assertEquals('aihuishou.aijihui', package)
 
         activity = self.driver.current_activity
-        print 'activity = ', activity
+        print('activity = ', activity)
 
         if activity == '.activity.login.LaunchScreenActivity':
             sleep(5)
 
         user_text = self.driver.find_element_by_id('aihuishou.aijihui:id/login_activity_et_username')
-        print 'user_text = ', user_text
+        print('user_text = ', user_text)
         self.driver.set_value(user_text, '13000000006')
 
         psd_text = self.driver.find_element_by_id('aihuishou.aijihui:id/login_activity_et_password')
-        print 'psd_text = ', psd_text
+        print('psd_text = ', psd_text)
         self.driver.set_value(psd_text, '304021')
 
         psd_save = self.driver.find_element_by_id('aihuishou.aijihui:id/login_activity_cb_save_password')
-        print 'psd_save = ', psd_save
+        print('psd_save = ', psd_save)
         action.tap(psd_save).perform()
 
         login_btn = self.driver.find_element_by_id('aihuishou.aijihui:id/login_btn')
@@ -63,7 +64,7 @@ class AndroidAJHTests(unittest.TestCase):
         #     self.driver.tap([(x, y)])
         #     sleep(1)
 
-        print '点击弹层 x,y =', x, y
+        print('点击弹层 x,y =', x, y)
         self.driver.tap([(x, y)])
         sleep(1)
 
@@ -81,7 +82,7 @@ class AndroidAJHTests(unittest.TestCase):
         sleep(3)
 
         activity = self.driver.current_activity
-        print 'activity: ', activity
+        print('activity: ', activity)
 
         # root = self.driver.find_elements_by_class_name('android.widget.FrameLayout')
         # print 'root ', root
@@ -90,7 +91,7 @@ class AndroidAJHTests(unittest.TestCase):
         # print 'category ', category
 
         brands = self.driver.find_elements_by_id('aihuishou.aijihui:id/typename')
-        print 'brands ', brands
+        print('brands ', brands)
         # sometimes numbers shift
         for el in brands:
             text = el.text
@@ -146,10 +147,10 @@ class AndroidAJHTests(unittest.TestCase):
         # action.tap(prop03).perform()
 
         props = self.driver.find_elements_by_class_name("android.widget.TextView")
-        print '属性 ', props
+        print('属性 ', props)
         for el in props:
             text = el.text
-            print 'prop text ', text
+            print('prop text ', text)
             if text == '苹果':
                 action.tap(el).perform()
             elif text == 'OPPO':

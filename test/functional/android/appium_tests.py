@@ -20,12 +20,12 @@ import os
 import random
 from time import sleep
 # from dateutil.parser import parse
+from test.functional.android import desired_capabilities
 
 # from webdriver.applicationstate import ApplicationState
 from selenium.common.exceptions import NoSuchElementException
 
 from appium import webdriver
-import desired_capabilities
 
 # the emulator is sometimes slow and needs time to think
 SLEEPY_TIME = 1
@@ -33,6 +33,7 @@ SLEEPY_TIME = 1
 
 class AppiumTests(unittest.TestCase):
     def setUp(self):
+
         desired_caps = desired_capabilities.get_desired_capabilities('ApiDemos-debug.apk')
         self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 

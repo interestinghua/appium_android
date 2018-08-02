@@ -47,7 +47,7 @@ class MultiActionTests(unittest.TestCase):
 
 class DriverStub(object):
     def execute(self, action, params):
-        print "driver.execute called"
+        print("driver.execute called")
 
 
 class ElementStub(object):

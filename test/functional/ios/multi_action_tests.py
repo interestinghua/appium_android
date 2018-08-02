@@ -16,7 +16,7 @@ import unittest
 from time import sleep
 
 from appium import webdriver
-import desired_capabilities
+from test.functional.ios import desired_capabilities
 
 
 class MultiActionTests(unittest.TestCase):

@@ -15,8 +15,7 @@
 import unittest
 
 from appium import webdriver
-from appium.common.exceptions import NoSuchContextException
-import desired_capabilities
+from test.functional.android import desired_capabilities
 from time import sleep
 
 from selenium.webdriver.common.touch_actions import TouchActions

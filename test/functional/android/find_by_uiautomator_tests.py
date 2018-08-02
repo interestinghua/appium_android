@@ -15,7 +15,7 @@
 import unittest
 
 from appium import webdriver
-import desired_capabilities
+from test.functional.android import desired_capabilities
 
 
 class FindByUIAutomatorTests(unittest.TestCase):

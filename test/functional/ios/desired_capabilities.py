@@ -20,6 +20,7 @@ PATH = lambda p: os.path.abspath(
 
 BUNDLE_ID = 'com.example.apple-samplecode.UICatalog'
 
+
 def get_desired_capabilities(app):
     desired_caps = {
         'deviceName': 'iPhone 6s',
